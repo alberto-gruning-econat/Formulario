@@ -27,7 +27,7 @@
                 HasShadow="False"
                 IsVisible="{Binding UpdateFace1}"
                 >
-                <!-- <StackLayout Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Black"  > -->
+                <!-- <StackLayout Padding="0" VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="Black"  > -->
                     <Image 
                         BackgroundColor="Transparent"
                         VerticalOptions="Fill"
@@ -38,13 +38,23 @@
             </Frame>
             <Label Text="{Binding PhotoPath}" TextColor="Black" IsVisible="False" />
 
-            <Button
+            <Grid Grid.Row="2" HorizontalOptions="Fill" Padding="20,10,20,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="CounterBtn" Grid.Column="0" Text="Cámara" Style="{StaticResource buttonNav}" Margin="0,0,12,0" Clicked="OpenAddPhoto_Clicked"/>
+                <Button x:Name="GalleryBtn" Grid.Column="1" Text="Galería" Style="{StaticResource buttonNav}" Margin="12,0,0,0" Clicked="OpenAddPhoto_Clicked"/>
+            </Grid>
+
+
+            <!-- <Button
                 x:Name="CounterBtn"
                 Text="Abrir la cámara" 
                 SemanticProperties.Hint="Importar fotos desde galeria"
                 ClassId="1" 
                 Clicked="OpenAddPhoto_Clicked"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill" /> -->
         </VerticalStackLayout>
 
     </ScrollView>
